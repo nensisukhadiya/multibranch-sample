@@ -8,4 +8,10 @@ pipeline {
             }
         }
     }
+    stage('Create File') {
+            steps {
+                sh 'echo "Hello, World!" > hello.txt'
+                sh 'cat hello.txt' // Just to verify
+            }
+    }
 }
