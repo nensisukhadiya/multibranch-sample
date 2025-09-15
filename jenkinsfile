@@ -2,18 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Say Hello') {
             steps {
-                echo 'Hello, everyone! This is jenkins multibranch demo'
+                echo 'Hello, World!'
             }
         }
-    }
-    stage('Create File') {
+
+        stage('Create File') {
             steps {
-                script {
-                    sh 'echo "Hello, World!" > hello.txt'
-                    sh 'cat hello.txt'
-                }
+                sh '''
+                    echo "This is a test file." > test.txt
+                    cat test.txt
+                '''
             }
+        }
     }
 }
